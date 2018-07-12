@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Tugger;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,7 +29,17 @@ class User extends Authenticatable
 
     public function verifyUser()
     {
-        return $this->hasOne('App\VerifyUser');
+        return $this->hasOne('Tugger\VerifyUser');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany('Tugger\Post');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany('Tugger\Like');
     }
 
 }

@@ -1,0 +1,7 @@
+.user-avatar {
+    width: 20%;
+    height: 100%;
+    float: left;
+    border-radius: 30%;
+    margin-right: 25px;
+}

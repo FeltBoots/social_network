@@ -7,18 +7,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
 
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
-                @if (session('warning'))
-                    <div class="alert alert-warning">
-                        {{ session('warning') }}
-                    </div>
-                @endif
+                @extends('includes.message-block')
 
                 <div class="panel-body">
+                    <div class="row mb-4">
+                        <a class="btn btn-info col" role="button" href="https://vl-social-network.herokuapp.com/api/login?service_id=turov&redirect_url=http://turov-socset-laravel.herokuapp.com/accept_auth_code/vlsn">VL</a>
+                        <a class="btn btn-info col" role="button" href="https://ag-social-network.herokuapp.com/api/login?service_id=turov&redirect_url=http://turov-socset-laravel.herokuapp.com/accept_auth_code/ag">AG</a>
+                        <a class="btn btn-info col" role="button" href="http://keltarhelviett.pythonanywhere.com/api/login?service_id=turov&redirect_url=http://turov-socset-laravel.herokuapp.com/accept_auth_code/4rest">4rest</a>
+                    </div>
+
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 

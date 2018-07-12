@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Sign Up</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -64,13 +64,17 @@
                         <div class="form-group {{ $errors->has('date_of_birth') ? 'has-error' : '' }}">
                             <label for="birthday" class="col-md-4 control-label">Date of birth</label>
 
-                            {{--{{ Form::label('', '', ['class' => 'control-label']) }}--}}
                             <div class="form-inline col-md-6">
                                 {{ Form::selectRange('date_of_birth[day]', 1, 31, null, ['class' => 'form-control']) }}
                                 {{ Form::selectMonth('date_of_birth[month]', null, ['class' => 'form-control'])}}
                                 {{ Form::selectYear('date_of_birth[year]', date('Y'), date('Y') - 100, null, ['class' => 'form-control']) }}
+                                @if($errors->has('date_of_birth'))
+                                    <span class="help-block">
+                                        <strong>{{ 'You must be at least 6 years old' }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                            {{ $errors->first('date_of_birth', '<span class="help-block">:message</span>') }}
+
                         </div>
 
                         {{--<div class="form-group{{ $errors->has('user_avatar') ? ' has-error' : '' }}">--}}

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Tugger\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-//use App\Http\Controllers\Auth\Request;
+use Tugger\Http\Controllers\Controller;
+//use Tugger\Http\Controllers\Auth\Request;
 use http\Env\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
