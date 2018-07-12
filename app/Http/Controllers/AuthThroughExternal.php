@@ -31,7 +31,7 @@ class AuthThroughExternal
         $response = json_decode($json1);
         if ($response->status == 'ok'){
             $client = new Client();
-            $json2 = $client->get($url . '/api/profile/' . $response->user_id, ['query' => ['service_id' => 'turov',
+            $json2 = $client->get($url . '/api/profile/' . $response->user_id, ['query' => ['service_id' => 'donskoy',
                 'token' => $response->token]])->getBody();
             $response2 = json_decode($json2);
             if ($response2->status == 'ok'){
